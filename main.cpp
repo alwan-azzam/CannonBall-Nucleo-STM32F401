@@ -82,9 +82,16 @@ void led1(void const *argument) {
 }*/
 
 
+void test (void const *argument)	// it is a thread
+{
+	usb.printf("send somthing");
+	usb.scanf("receive something");	
+}
+
 int main() {
     //Thread th1(led1);
 	
 		Thread th2(ultrason_receive);
+	Thread th3(test);
     while(1) {}
 }
